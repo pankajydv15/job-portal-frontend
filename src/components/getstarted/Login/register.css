@@ -1,0 +1,97 @@
+/* Improved Register Component CSS */
+
+.signup-container {
+    background: linear-gradient(135deg, #000000, #434343);
+    display: flex;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.glass-form {
+    background: url("https://www.transparenttextures.com/patterns/dark-mosaic.png");
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    max-width: 400px;
+    color: #fff;
+    text-align: center;
+}
+
+.glass-form h2 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    color: #00c9ff;
+    text-shadow: 0 0 5px #00d9ff, 0 0 40px #00bfff;
+}
+
+/* .input-groupp {
+    display: flex;
+    align-items: center;
+    background: url("https://www.transparenttextures.com/patterns/dark-mosaic.png");
+    box-shadow: 0 0 40px #00bfff, 0 0 1px #00d9ff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: 0.3s ease-in-out;
+}
+
+.input-groupp:focus-within {
+    border: 1px solid #4caf50;
+    transform: scale(1.02);
+}
+
+.input-groupp .icon {
+    color: #ddd;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.input-group input {
+}
+
+.input-groupp input::placeholder {
+    color: #ccc;
+} */
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #00c9ff;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 217, 255, 2);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: #5fbbd4;
+    transform: scale(1.05);
+}
+
+button:disabled {
+    background: #555;
+    cursor: not-allowed;
+}
+
+.error {
+    color: #ff4d4d;
+    margin-bottom: 10px;
+}
+
+.success {
+    color: #4caf50;
+    margin-bottom: 10px;
+}
+
+.loading {
+    color: #ffa500;
+    margin-bottom: 10px;
+}

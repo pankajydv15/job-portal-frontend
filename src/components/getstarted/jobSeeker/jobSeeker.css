@@ -1,0 +1,170 @@
+/* ✅ Background Styling - Futuristic Gradient */
+.main-container {
+  background: linear-gradient(135deg, #000000, #434343);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ✅ Dashboard Container - Glassmorphism Vibe */
+.dashboard-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 60%;
+  min-height: 35rem;
+  border-radius: 1rem;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  gap: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  color: #fff;
+}
+
+/* ✅ Profile Section */
+.profile-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* ✅ Profile Pic - Neon Glow Effect */
+.profile-pic {
+  border: solid #e91e63 0.7rem;
+  height: 12rem;
+  width: 12rem;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 25px #e91e63;
+  transition: 0.4s ease-in-out;
+}
+
+/* Profile Pic Hover */
+.profile-pic:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 35px #e91e63, 0 0 55px #e91e63;
+}
+
+.profile-pic img {
+  height: 22rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* ✅ User Info Card - Glassy Card Effect */
+.user-info {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 2rem;
+  padding: 1.5rem;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  transition: 0.3s ease-in-out;
+}
+
+/* ✅ Name Styling */
+.user-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+}
+
+/* ✅ User Details Container (New Layout) */
+.user-details-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+/* ✅ Left and Right Columns */
+.user-left,
+.user-right {
+  width: 50%;
+  text-align: left;
+}
+
+/* ✅ User Details Styling */
+.user-details {
+  font-size: 1rem;
+  opacity: 0.9;
+  padding: 5px 0;
+}
+
+/* ✅ Loading & Error Styling */
+.loading-text {
+  color: #ffa500;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px #ffa500;
+}
+
+.error-text {
+  color: #ff4d4d;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px #ff4d4d;
+}
+
+/* ✅ Button Styling - Cyberpunk Glow */
+.edit-profile-btn {
+  padding: 12px 24px;
+  background: linear-gradient(to right, #e91e63, #c2185b);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  font-weight: bold;
+  margin: 1rem;
+  box-shadow: 0 0 10px #e91e63;
+}
+
+/* Button Hover */
+.edit-profile-btn:hover {
+  background: linear-gradient(to right, #c2185b, #880e4f);
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px #e91e63, 0 0 35px #ff4081;
+}
+
+/* ✅ Responsive Adjustments */
+@media (max-width: 768px) {
+  .dashboard-container {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .user-name {
+    font-size: 1.8rem;
+  }
+
+  .edit-profile-btn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  /* Stack details vertically on smaller screens */
+  .user-details-container {
+    flex-direction: column;
+  }
+
+  .user-left,
+  .user-right {
+    width: 100%;
+  }
+}

@@ -1,0 +1,44 @@
+.profile-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #000000, #434343);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 0 0 30px #00d9ff, 0 0 40px #00bfff;
+  color: white;
+}
+
+.profile-form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-form-container input[type="text"],
+.profile-form-container input[type="file"],
+.profile-form-container select {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.profile-form-container button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.profile-form-container button:hover {
+  background-color: #0056b3;
+}
