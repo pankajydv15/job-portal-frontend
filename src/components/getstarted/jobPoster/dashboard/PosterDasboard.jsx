@@ -1,57 +1,55 @@
 import React, { useState, useEffect } from "react";
-import "./jobSeeker.css";
-import profile from "./profilePic.png";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-function JobSeeker() {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const navigate = useNavigate();
 
-  useEffect(() => {
-    const fetchLoggedInUser = async () => {
-      setLoading(true);
-      try {
-        const token = localStorage.getItem("token");
-        if (!token) throw new Error("No token found, please log in");
-
-        const response = await axios.get("http://localhost:5000/api/auth/me", {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-
-        console.log("API Response:", response.data);
-
-        const { data, success } = response.data;
-
-        if (success && data) {
-          setUser(data);
-        } else {
-          setError("Failed to fetch user data");
+function PosterDasboard() {
+    const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    const navigate = useNavigate();
+  
+    useEffect(() => {
+      const fetchLoggedInUser = async () => {
+        setLoading(true);
+        try {
+          const token = localStorage.getItem("token");
+          if (!token) throw new Error("No token found, please log in");
+  
+          const response = await axios.get("http://localhost:5000/api/auth/me", {
+            headers: { Authorization: `Bearer ${token}` },
+          });
+  
+          console.log("API Response:", response.data);
+  
+          const { data, success } = response.data;
+  
+          if (success && data) {
+            setUser(data);
+          } else {
+            setError("Failed to fetch user data");
+          }
+        } catch (error) {
+          console.error("API Error:", error);
+          setError("Failed to fetch data");
+        } finally {
+          setLoading(false);
         }
-      } catch (error) {
-        console.error("API Error:", error);
-        setError("Failed to fetch data");
-      } finally {
-        setLoading(false);
-      }
+      };
+      fetchLoggedInUser();
+    }, []);
+  
+    const handleLogout = () => {
+      localStorage.removeItem("token");
+      window.location.href = "/login";
     };
-    fetchLoggedInUser();
-  }, []);
-
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    window.location.href = "/login";
-  };
-
   return (
     <div className="main-container">
       <div className="glass-card">
         <div className="user-card">
 
         <div className="profile-section">
-          <img src={profile} alt="Profile" className="profile-pic" />
+          <img src={""} alt="Profile" className="profile-pic" />
           <h1 className="user-name">
             {user ? `${user.firstName} ${user.lastName}` : "Welcome!"}
           </h1>
@@ -65,7 +63,7 @@ function JobSeeker() {
         </div>
         </div>
 
-        <div className="user-details-grid">
+        {/* <div className="user-details-grid">
           {[
             {
               label: "Gender",
@@ -97,7 +95,7 @@ function JobSeeker() {
               <p>{detail.value}</p>
             </div>
           ))}
-        </div>
+        </div> */}
 
         {loading && <p className="loading-text">Loading...</p>}
         {error && <p className="error-text">{error}</p>}
@@ -107,7 +105,7 @@ function JobSeeker() {
             className="neon-btn"
             onClick={() => navigate("/profileManagement")}
           >
-            Edit Profile
+            Post a Job
           </button>
           <button className="neon-btn logout" onClick={handleLogout}>
             Logout
@@ -115,7 +113,7 @@ function JobSeeker() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default JobSeeker;
+export default PosterDasboard

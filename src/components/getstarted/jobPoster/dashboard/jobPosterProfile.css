@@ -1,0 +1,111 @@
+Main Container
+.main-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Arial", sans-serif;
+}
+
+/* Title */
+.title {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* Form Styling */
+.form-data {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-data label {
+  font-weight: bold;
+  color: #555;
+}
+
+.form-data input,
+.form-data textarea,
+.form-data select {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-data textarea {
+  resize: none;
+  height: 100px;
+}
+
+.form-data input:focus,
+.form-data textarea:focus,
+.form-data select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Submit Button */
+.submit-btn {
+  padding: 0.8rem;
+  background: linear-gradient(45deg, #007bff, #00d9ff);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(45deg, #0056b3, #007bff);
+}
+
+.submit-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Success and Error Messages */
+.success-message {
+  color: #28a745;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.error-message {
+  color: #dc3545;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-container {
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .form-data input,
+  .form-data textarea,
+  .form-data select {
+    font-size: 0.9rem;
+  }
+
+  .submit-btn {
+    font-size: 0.9rem;
+  }
+}

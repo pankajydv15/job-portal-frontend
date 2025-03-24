@@ -1,170 +1,163 @@
-/* ✅ Background Styling - Futuristic Gradient */
+/* 🔥 Background Styling - Dark Sci-fi */
 .main-container {
-  background: linear-gradient(135deg, #000000, #434343);
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
   width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-/* ✅ Dashboard Container - Glassmorphism Vibe */
-.dashboard-container {
+.user-card{
+  display: flex;
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  width: 60%;
-  min-height: 35rem;
-  border-radius: 1rem;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-  padding: 2rem;
-  gap: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #00e5ff;
   text-align: center;
-  transition: transform 0.3s ease-in-out;
   color: #fff;
-}
-
-/* ✅ Profile Section */
-.profile-section {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1rem;
-}
-
-/* ✅ Profile Pic - Neon Glow Effect */
-.profile-pic {
-  border: solid #e91e63 0.7rem;
-  height: 12rem;
-  width: 12rem;
-  border-radius: 50%;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 0 25px #e91e63;
-  transition: 0.4s ease-in-out;
-}
-
-/* Profile Pic Hover */
-.profile-pic:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 35px #e91e63, 0 0 55px #e91e63;
-}
-
-.profile-pic img {
-  height: 22rem;
-  width: 100%;
-  object-fit: cover;
-}
-
-/* ✅ User Info Card - Glassy Card Effect */
-.user-info {
-  background: rgba(255, 255, 255, 0.15);
-  color: #fff;
-  font-family: "Poppins", sans-serif;
-  letter-spacing: 1px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  border-radius: 2rem;
-  padding: 1.5rem;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
   transition: 0.3s ease-in-out;
 }
 
-/* ✅ Name Styling */
-.user-name {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 0.3rem;
-  display: flex;
-  flex-direction: column;
-  text-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+
+/* 🔥 Glass Card */
+.glass-card {
+  margin: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+  width: 100%;
+  max-width: 600px;
+  /* height: 100%; */
+  /* overflow: hidden; */
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+  
 }
 
-/* ✅ User Details Container (New Layout) */
-.user-details-container {
+/* 🔥 Profile Section */
+.profile-section {
   display: flex;
-  justify-content: space-between;
-  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+/* 🔥 Profile Pic */
+.profile-pic {
+  border: 5px solid #00e5ff;
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  box-shadow: 0 0 30px #00e5ff;
+  transition: 0.3s ease-in-out;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px #00e5ff;
+}
+
+/* 🔥 User Name */
+.user-name {
+  font-size: 2rem;
+  color: #fff;
+  margin-top: 0.5rem;
+  text-shadow: 0 0 10px #00e5ff;
+}
+.user-bio{
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #00e5ff;
+  text-align: center;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+  margin: 2rem;
+}
+
+.user-bio p{
+  text-align: justify;
+}
+
+.user-bio span{
+  color:#00e5ff;
+  display: grid;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* 🔥 User Details Grid */
+.user-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
   margin-top: 1rem;
 }
 
-/* ✅ Left and Right Columns */
-.user-left,
-.user-right {
-  width: 50%;
-  text-align: left;
-}
-
-/* ✅ User Details Styling */
-.user-details {
-  font-size: 1rem;
-  opacity: 0.9;
-  padding: 5px 0;
-}
-
-/* ✅ Loading & Error Styling */
-.loading-text {
-  color: #ffa500;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-shadow: 0 0 10px #ffa500;
-}
-
-.error-text {
-  color: #ff4d4d;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-shadow: 0 0 10px #ff4d4d;
-}
-
-/* ✅ Button Styling - Cyberpunk Glow */
-.edit-profile-btn {
-  padding: 12px 24px;
-  background: linear-gradient(to right, #e91e63, #c2185b);
+/* 🔥 Detail Cards */
+.detail-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #00e5ff;
+  text-align: center;
   color: #fff;
+  transition: 0.3s ease-in-out;
+}
+
+.label {
+  font-weight: bold;
+  color: #00e5ff;
+}
+
+/* 🔥 Neon Buttons */
+.neon-btn {
+  background: linear-gradient(45deg, #00e5ff, #0088cc);
+  padding: 0.8rem 2rem;
   border: none;
   border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
   cursor: pointer;
-  font-size: 16px;
-  transition: all 0.3s ease-in-out;
-  font-weight: bold;
-  margin: 1rem;
-  box-shadow: 0 0 10px #e91e63;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 0 15px #00e5ff;
+  margin-top: 1rem;
 }
 
-/* Button Hover */
-.edit-profile-btn:hover {
-  background: linear-gradient(to right, #c2185b, #880e4f);
-  transform: translateY(-3px);
-  box-shadow: 0 0 15px #e91e63, 0 0 35px #ff4081;
+/* 🔥 Logout Button */
+.logout {
+  background: linear-gradient(45deg, #ff4d4d, #cc0000);
+  box-shadow: 0 0 15px #ff4d4d;
 }
 
-/* ✅ Responsive Adjustments */
+/* 🔥 Button Hover */
+.neon-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px #00e5ff;
+}
+
+/* 🔥 Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🔥 Mobile Responsive */
 @media (max-width: 768px) {
-  .dashboard-container {
-    width: 90%;
-    padding: 1rem;
+  .user-details-grid {
+    grid-template-columns: 1fr;
   }
 
-  .user-name {
-    font-size: 1.8rem;
-  }
-
-  .edit-profile-btn {
-    font-size: 14px;
-    padding: 8px 16px;
-  }
-
-  /* Stack details vertically on smaller screens */
-  .user-details-container {
-    flex-direction: column;
-  }
-
-  .user-left,
-  .user-right {
-    width: 100%;
+  .profile-pic {
+    height: 8rem;
+    width: 8rem;
   }
 }
