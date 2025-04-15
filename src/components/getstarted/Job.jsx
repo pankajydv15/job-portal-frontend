@@ -1,40 +1,67 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./job.css";
-import { Link } from "react-router-dom";
-import { FaUserTie, FaBriefcase } from "react-icons/fa";
+import axios from "axios";
 
 function Job() {
+  const [jobs, setJobs] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedJob, setSelectedJob] = useState(null);
+
+  useEffect(() => {
+    const fetchJobs = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/api/job");
+        setJobs(response.data);
+      } catch (error) {
+        console.log("Error fetching jobs:", error);
+      }
+    };
+    fetchJobs();
+  }, []);
+
+  const openModal = (job) => {
+    setSelectedJob(job);
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+    setSelectedJob(null);
+  };
+
   return (
-    <div className="job-main">
-      {/* Particle Background */}
-      <div className="floating-particles"></div>
+    <div className="job-container">
+      <h2 className="job-title">🔥 Available Job Listings</h2>
 
-      <div className="are-you">
-        <h2>Are you a</h2>
+      <div className="job-cards">
+        {jobs.length > 0 ? (
+          jobs.map((job) => (
+            <div key={job._id} className="job-card">
+              <h3>{job.companyName}</h3>
+              <p>📍 {job.location}</p>
+              <p>🏭 {job.industry}</p>
+              <button onClick={() => openModal(job)} className="job-btn">
+                View Details
+              </button>
+            </div>
+          ))
+        ) : (
+          <p className="loading-text">Fetching jobs...</p>
+        )}
       </div>
 
-      {/* Job Seeker & Poster Cards */}
-      <div className="job">
-        <Link to="/login" className="card job-seeker">
-          <FaUserTie className="card-icon" />
-          <h2>Job Seeker 💼</h2>
-          <p>Find your dream job and start your journey!</p>
-        </Link>
-
-        <Link to="/post-job" className="card job-poster">
-          <FaBriefcase className="card-icon" />
-          <h2>Job Poster 🚀</h2>
-          <p>Hire top talents for your company!</p>
-        </Link>
-      </div>
-
-      {/* Call To Action */}
-      <div className="cta-section">
-        <h3>Not sure where to start?</h3>
-        <Link to="/explore">
-          <button className="explore-btn">Explore More ➜</button>
-        </Link>
-      </div>
+      {showModal && selectedJob && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <h3>{selectedJob.companyName}</h3>
+            <p><strong>Location:</strong> {selectedJob.location}</p>
+            <p><strong>Industry:</strong> {selectedJob.industry}</p>
+            <p><strong>Description:</strong> {selectedJob.description}</p>
+            <button className="applyNow" onClick={""}>Apply Now</button>
+            <button className="close-btn" onClick={closeModal}>Close</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

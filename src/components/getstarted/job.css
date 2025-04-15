@@ -1,181 +1,149 @@
-/* 🎉 Main Background Styling */
-.job-main {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #000000, #434343);
-    display: flex;
+/* 🌌 Base Container */
+.job-container {
+  min-height: 100vh;
+  background: radial-gradient(circle, #1a1a1a, #000000);
+  padding: 3rem 2rem;
+  color: #ffffff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 💡 Section Title */
+.job-title {
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+  color: #00eaff;
+  text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff;
+}
+
+/* 🧩 Card Grid */
+.job-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* 📦 Individual Card */
+.job-card {
+  background: rgba(0, 255, 255, 0.1);
+  border: 2px solid #00eaff;
+  box-shadow: 0 0 20px rgba(0, 234, 255, 0.5);
+  padding: 1.5rem;
+  border-radius: 15px;
+  width: 300px;
+  transition: transform 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.job-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #00eaff;
+}
+
+/* 📝 Job Text */
+.job-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #00eaff;
+}
+
+.job-card p {
+  margin: 0.5rem 0;
+}
+
+/* 🎯 Button */
+.job-btn {
+  margin-top: 1rem;
+  background: linear-gradient(to right, #00c9ff, #92fe9d);
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  color: #000;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.job-btn:hover {
+  background: #00eaff;
+  color: #000000;
+}
+
+/* 🌀 Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 10, 10, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* 🧊 Modal Box */
+.modal-content {
+  background: #111;
+  color: #ffffff;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 0 30px #00eaff;
+  text-align: left;
+}
+
+.modal-content h3 {
+  font-size: 2rem;
+  color: #00eaff;
+  margin-bottom: 1rem;
+}
+
+.modal-content p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+/* ❌ Close Button */
+.close-btn {
+  margin-top: 1rem;
+  background-color: #ff4444;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.close-btn:hover {
+  background-color: #ff2222;
+}
+
+/* 📱 Responsive */
+@media screen and (max-width: 768px) {
+  .job-cards {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    padding: 2rem;
-    position: relative;
-    overflow: hidden;
+    gap: 1.5rem;
   }
-  
-  /* 🔥 Floating Particle Background Animation */
-  .floating-particles {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: linear-gradient(135deg, #000000, #434343);
-    display: flex;
-    opacity: 0.4;
-    animation: floatParticles 20s infinite ease-in-out;
-    z-index: -1;
-  }
-  
-  @keyframes floatParticles {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0); }
-  }
-  
-  /* 🎯 Neon Header Styling */
-  .are-you h2 {
-    font-size: 3rem;
-    color: #fff;
-    text-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff;
-    animation: pulseGlow 2s infinite alternate;
-  }
-  
-  @keyframes pulseGlow {
-    from { text-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff; }
-    to { text-shadow: 0 0 30px #00ffff, 0 0 40px #00ffff; }
-  }
-  
-  /* 🔥 Card Container Setup */
-  .job {
-    display: flex;
-    gap: 2rem;
-    margin-top: 1.5rem;
-  }
-  
-  /* 🎯 Individual Card Styling */
-  .card {
-    text-decoration: none;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 2rem;
-    width: 22rem;
-    height: 20rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 25px rgba(0, 217, 255, 0.6);
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-    cursor: pointer;
-    position: relative;
-  }
-  
-  /* Card Icons */
-  .card-icon {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-    color: #fff;
-    animation: bounceIcon 1.5s infinite alternate ease-in-out;
-  }
-  
-  /* Icon Bounce Animation */
-  @keyframes bounceIcon {
-    from { transform: translateY(0); }
-    to { transform: translateY(-10px); }
-  }
-  
-  /* 🔥 Seeker Card Styling */
-  .job-seeker {
-    border: 2px solid #00d9ff;
-    color: #00d9ff;
-  }
-  
-  /* 🚀 Poster Card Styling */
-  .job-poster {
-    border: 2px solid #ffa500;
-    color: #ffa500;
-  }
-  
-  /* Card Heading */
-  .card h2 {
+
+  .job-title {
     font-size: 2rem;
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 0 0 15px currentColor;
   }
-  
-  /* Card Description */
-  .card p {
-    font-size: 1rem;
-    color: #ddd;
-    text-align: center;
+
+  .modal-content {
+    padding: 1.5rem;
   }
-  
-  /* 🎉 Card Hover Effects */
-  .card:hover {
-    transform: scale(1.1) rotateY(10deg);
-    box-shadow: 0 0 40px rgba(146, 254, 157, 0.8);
-  }
-  
-  /* Hover Glow for Each Card */
-  .job-seeker:hover {
-    box-shadow: 0 0 50px #00d9ff;
-    background: rgba(0, 217, 255, 0.2);
-  }
-  
-  .job-poster:hover {
-    box-shadow: 0 0 50px #ffa500;
-    background: rgba(255, 165, 0, 0.2);
-  }
-  
-  /* 🎯 CTA Section Styling */
-  .cta-section {
-    margin-top: 2rem;
-    text-align: center;
-    color: #fff;
-  }
-  
-  .explore-btn {
-    margin-top: 1rem;
-     background: linear-gradient(45deg, #00c9ff, #92fe9d);
-    color: #0f0c29;
-    padding: 0.8rem 2rem;
-    border: none;
-    border-radius: 50px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    animation: pulseBtn 1.5s infinite alternate;
-    transition: 0.3s ease;
-  }
-  
-  /* CTA Button Pulse Effect */
-  @keyframes pulseBtn {
-    from { box-shadow: 0 0 10px #00ffff; }
-    to { box-shadow: 0 0 20px #00ffff; }
-  }
-  
-  .explore-btn:hover {
-    background-color: #fff;
-    color: #302b63;
-    transform: scale(1.1);
-  }
-  
-  /* 🔥 Responsive Layout */
-  @media (max-width: 768px) {
-    .job {
-      flex-direction: column;
-      gap: 1rem;
-    }
-  
-    .card {
-      width: 18rem;
-      height: 18rem;
-    }
-  
-    .are-you h2 {
-      font-size: 2rem;
-    }
-  }
-  
+}
+
+.loading-text {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-top: 2rem;
+}

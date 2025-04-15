@@ -4,7 +4,7 @@ import axios from "axios";
 import "./login.css";
 
 const LoginPage = () => {
-  const [email, setEmail] = useState("rahul@gmail.com");
+  const [email, setEmail] = useState("m@gmail.com");
   const [password, setPassword] = useState("12345");
   const navigate = useNavigate();
 
